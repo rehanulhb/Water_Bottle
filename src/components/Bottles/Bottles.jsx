@@ -18,9 +18,22 @@ const Bottles = () => {
     //Load Cart From Local Storage
     useEffect(()=> {
         console.log('Called the useeffecxt', bottles.length);
-       if(bottles.length > 0){
+       if(bottles.length ){
         const storedCart = getStoredCart();
-        console.log(storedCart);
+        console.log(storedCart, bottles);
+        const savedCart = [];
+
+        for(const id of storedCart){
+            console.log(id);
+            const bottle = bottles.find(bottle => bottle.id === id);
+            if(bottle){
+                savedCart.push(bottle);
+            }
+        }
+
+        console.log('Saved Crt',savedCart);
+        setCart(savedCart);
+
        }
     }, [bottles])
 
