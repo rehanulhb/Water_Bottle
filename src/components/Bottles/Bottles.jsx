@@ -47,7 +47,7 @@ const Bottles = () => {
     return (
         <div>
             <h3>Bottles Available : {bottles.length}</h3>
-            {/* <h4>Cart: {cart.length}</h4> */}
+            
             <Cart cart={cart}></Cart>
 
             
